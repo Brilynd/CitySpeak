@@ -1,24 +1,25 @@
 import React, { useState, useEffect } from 'react';
+import Grid from '@mui/material/Grid';
+
 import MyMap from './Map';
 
-function App() {
-  const dimensions = {
-    width: 600,
-    height: 300,
-    margin: { top: 30, right: 30, bottom: 30, left: 60 }
-  };
 
-  const data = [{}]
+function App() {
 
   return (
-    <div className="App">
-      <header className="App-header">
-
-        ... no changes in this part ...
-
-        <p>The current time is {0}.</p>
-        <MyMap data={data} dimensions={dimensions}/>
+    <div>
+      <header>
+        <h1>City-Speak</h1>
       </header>
+      <Grid container style={{minHeight: "80vh"}}>
+        <Grid item xs={6}>
+          <MyMap />
+        </Grid>
+        <Grid item xs={6}>
+          <h2>Current Location: Paris</h2>
+        </Grid>
+      </Grid>
+      
     </div>
   );
 }

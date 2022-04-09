@@ -4,38 +4,32 @@ import { stamenToner } from 'pigeon-maps/providers'
 
 import Geocode from "react-geocode";
 
-// set Google Maps Geocoding API for purposes of quota management. Its optional but recommended.
-
-
-
-
 const MyMap = () => {
 
-  const [center, setCenter] = useState([0,0]);
+  const [center, setCenter] = useState([48.85837009999999, 2.2944813]);
 
-  useEffect(() => {
-    Geocode.setApiKey("AIzaSyDgKlIduRn5Dvn6UBVwmoFpdQsFKNdpWQY");
-    Geocode.setLanguage("en");
+  // useEffect(() => {
+  //   Geocode.setApiKey("AIzaSyDgKlIduRn5Dvn6UBVwmoFpdQsFKNdpWQY");
+  //   Geocode.setLanguage("en");
 
-    // Get latitude & longitude from address.
-    Geocode.fromAddress("Eiffel Tower").then(
-      (response) => {
-        const { lat, lng } = response.results[0].geometry.location;
-        setCenter([lat, lng] );
-        console.log(lat, lng);
-      },
-      (error) => {
-        console.error(error);
-      }
-    );
-  }, [])
+  //   // Get latitude & longitude from address.
+  //   Geocode.fromAddress("Eiffel Tower").then(
+  //     (response) => {
+  //       const { lat, lng } = response.results[0].geometry.location;
+  //       setCenter([lat, lng] );
+  //       console.log(lat, lng);
+  //     },
+  //     (error) => {
+  //       console.error(error);
+  //     }
+  //   );
+  // }, [])
 
   return (
     <Map
       provider={stamenToner}
-      height={300}
       center={center}
-      defaultZoom={1}
+      defaultZoom={4}
     >
       <Marker width={50} anchor={center} />
     </Map>
