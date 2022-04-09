@@ -1,16 +1,43 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Map, Marker } from "pigeon-maps";
 import { stamenToner } from 'pigeon-maps/providers'
 
+import Geocode from "react-geocode";
+
+// set Google Maps Geocoding API for purposes of quota management. Its optional but recommended.
+
+
+
+
 const MyMap = () => {
+
+  const [center, setCenter] = useState([0,0]);
+
+  useEffect(() => {
+    Geocode.setApiKey("AIzaSyDgKlIduRn5Dvn6UBVwmoFpdQsFKNdpWQY");
+    Geocode.setLanguage("en");
+
+    // Get latitude & longitude from address.
+    Geocode.fromAddress("Eiffel Tower").then(
+      (response) => {
+        const { lat, lng } = response.results[0].geometry.location;
+        setCenter([lat, lng] );
+        console.log(lat, lng);
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
+  }, [])
+
   return (
     <Map
       provider={stamenToner}
       height={300}
-      defaultCenter={[50.879, 4.6997]}
-      defaultZoom={11}
+      center={center}
+      defaultZoom={1}
     >
-      <Marker width={50} anchor={[50.879, 4.6997]} />
+      <Marker width={50} anchor={center} />
     </Map>
   );
 };
