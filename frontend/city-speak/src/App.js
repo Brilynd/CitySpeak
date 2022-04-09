@@ -1,16 +1,6 @@
-import './App.css';
 import React, { useState, useEffect } from 'react';
 
 function App() {
-  const [currentTime, setCurrentTime] = useState(0);
-
-  useEffect(() => {
-    fetch('/time').then(res => res.json()).then(data => {
-      console.log(data)
-      setCurrentTime(data.time);
-      
-    });
-  });
 
   return (
     <div className="App">
@@ -18,7 +8,7 @@ function App() {
 
         ... no changes in this part ...
 
-        <p>The current time is {currentTime}.</p>
+        <p>The current time is {0}.</p>
       </header>
     </div>
   );
