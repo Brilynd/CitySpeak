@@ -3,16 +3,17 @@ import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 import { Typography, Divider } from "@mui/material";
 import "./App.css";
-import { PieChart, data } from "./Chart";
+import { PieChart} from "./Chart";
 import MyMap from "./Map";
 import TopTweet from "./TopTweet";
-
+import data from './data';
 
 
 
 function App() {
   const [center, setCenter] = useState([0, 0]);
   const [location, setLocation] = useState("");
+  const [stateData, setStateData] = useState({});
 
   const getUserLocation = () => {
     fetch(
@@ -25,15 +26,31 @@ function App() {
       });
   };
 
+  const tweets = [];
+  for (let index = 0; index < Object.keys(data.state).length; index++) {
+    const tweet = {
+      state: data.state[index],
+      popular_category: data.popular_category[index],
+      tweet: data.tweet[index],
+      user: data.user[index],
+    }
+    tweets.push(tweet)
+  }
+
   useEffect(() => {
     getUserLocation();
   }, []);
 
-  const tweet = {
-    user: "John-Smith",
-    message: "This is some random tweet",
-    location: location,
-  };
+  useEffect(() => {
+    let dataPoint = tweets.filter((tweet) => tweet.state === location);
+    if (dataPoint.length > 0) {
+      dataPoint = dataPoint[0];
+    }
+
+    setStateData(dataPoint)
+  }, [location])
+
+  const tweet = {}
 
   return (
     <div>
@@ -59,7 +76,7 @@ function App() {
               <Typography variant="h3">{location}</Typography>
               <Divider style={{ marginTop: "10px", marginBottom: "5px" }} />
               <Typography variant="h4">Top Tweet</Typography>
-              <TopTweet tweet={tweet} />
+              <TopTweet tweet={stateData} />
 
               <div className="chart-container">
                 <PieChart/>
