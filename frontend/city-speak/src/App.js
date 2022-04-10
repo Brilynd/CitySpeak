@@ -75,7 +75,7 @@ function App() {
             <Card className="right-side">
               <Typography variant="h3">{location}</Typography>
               <Divider style={{ marginTop: "10px", marginBottom: "5px" }} />
-              <Typography variant="h4">Top Tweet</Typography>
+              <Typography variant="h4" fontSize="32px" textAlign='center' marginBottom="15px" letterSpacing=".5px">Top Tweet</Typography>
               <TopTweet tweet={stateData} />
 
               <div className="chart-container">
