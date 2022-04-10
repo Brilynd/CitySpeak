@@ -7,6 +7,7 @@ import { PieChart} from "./Chart";
 import MyMap from "./Map";
 import TopTweet from "./TopTweet";
 import data from './data';
+import hackPSU from './hackPSU.png'
 
 
 
@@ -59,8 +60,11 @@ function App() {
             State Speak
           </Typography>
         </Grid>
-        <Grid item xs={6}>
-          
+        
+        <Grid item container xs={6} justifyContent={"end"}>
+          <a href="https://hackpsu.org/">
+            <img src={hackPSU} width={50}></img>
+          </a>
         </Grid>
 
 
