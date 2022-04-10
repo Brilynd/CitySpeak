@@ -30,8 +30,7 @@ function App() {
   
   return (
     <div>
-      <header>
-        <Grid container>
+        <Grid container spacing={3} id="content">
           <Grid item xs={6}>
             <Typography variant="h3">City-Speak</Typography>
           </Grid>
@@ -43,24 +42,25 @@ function App() {
               
             </div>
           </Grid>
-        </Grid>
-        
-      </header>
-      <Grid container style={{minHeight: "80vh"}}>
-        <Grid item xs={6}>
-          <MyMap center={center}/>
-        </Grid>
-        <Grid item xs={6} className="right-side">
-          <Card className="card">
-            <h2>Current Location: {location}</h2>
-            <ul>
-              <li>Item 1</li>
-              <li>Item 2</li>
-              <li>Item 3</li>
-            </ul>
-          </Card>
-          
-        </Grid>
+       
+          <Grid item container spacing={3} style={{height: "90vh"}}>
+          <Grid item xs={6}>
+            <MyMap center={center} onLocationChange={(newLocation, newCenter) => {
+              setLocation(newLocation);
+              setCenter(newCenter);
+            }}/>
+          </Grid>
+          <Grid item xs={6}>
+            <Card className="card">
+              <Typography variant="h4">Current State: {location}</Typography>
+              <ul>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+              </ul>
+            </Card>
+          </Grid>
+          </Grid>
       </Grid>
       
     </div>
