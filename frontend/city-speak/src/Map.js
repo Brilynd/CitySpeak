@@ -4,9 +4,7 @@ import { stamenToner } from 'pigeon-maps/providers'
 
 import Geocode from "react-geocode";
 
-const MyMap = () => {
-
-  const [center, setCenter] = useState([48.85837009999999, 2.2944813]);
+const MyMap = (props) => {
 
   // useEffect(() => {
   //   Geocode.setApiKey("AIzaSyDgKlIduRn5Dvn6UBVwmoFpdQsFKNdpWQY");
@@ -28,10 +26,10 @@ const MyMap = () => {
   return (
     <Map
       provider={stamenToner}
-      center={center}
+      center={props.center}
       defaultZoom={4}
     >
-      <Marker width={50} anchor={center} />
+      <Marker width={50} anchor={props.center} />
     </Map>
   );
 };
