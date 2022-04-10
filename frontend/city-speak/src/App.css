@@ -22,6 +22,7 @@
 .tweet {
     margin-top: 15px;
     padding: 10px;
+    border-radius: 20px !important;
 }
 
 .tweet .message {

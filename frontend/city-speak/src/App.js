@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Grid from '@mui/material/Grid';
 import Card from '@mui/material/Card';
-import { Typography } from '@mui/material';
+import { Typography, Divider } from '@mui/material';
 import "./App.css"
 
 import MyMap from './Map';
@@ -34,7 +34,7 @@ function App() {
     <div>
         <Grid container spacing={3} id="content">
           <Grid item xs={6}>
-            <Typography variant="h3">City-Speak</Typography>
+            <Typography variant="h3"><b>State-Speak</b></Typography>
           </Grid>
        
           <Grid item container spacing={3} style={{height: "90vh"}}>
@@ -47,7 +47,9 @@ function App() {
 
           <Grid item xs={6}>
             <Card className="right-side">
-              <Typography variant="h4">Current State: {location}</Typography>
+              <Typography variant="h3">{location}</Typography>
+              <Divider style={{marginTop: "10px", marginBottom: "5px"}}/>
+              <Typography variant="h4">Top Tweet</Typography>
               <TopTweet tweet={tweet}/>
             </Card>
           </Grid>
