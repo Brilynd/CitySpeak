@@ -55,10 +55,16 @@ function App() {
     <div>
       <Grid container spacing={3} id="content">
         <Grid item xs={6}>
-          <Typography variant="h3">
-            <b>State Speak</b>
+          <Typography variant="h3" className="title">
+            State Speak
           </Typography>
         </Grid>
+        <Grid item xs={6}>
+          
+        </Grid>
+
+
+        
 
         <Grid item container spacing={3} style={{ height: "90vh" }}>
           <Grid item xs={6}>
@@ -72,8 +78,8 @@ function App() {
           </Grid>
           <Grid item xs={6}>
             <Card className="right-side">
-              <Typography variant="h3">{location}</Typography>
-              <Divider style={{ marginTop: "10px", marginBottom: "5px" }} />
+              <Typography variant="h3" style={{color: "#180849"}}>{location}</Typography>
+              <Divider style={{ marginTop: "10px", marginBottom: "10px" }} />
               
               {stateData.length == 0 ?
                 <>
