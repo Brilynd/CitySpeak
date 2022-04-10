@@ -9,6 +9,7 @@ const MyMap = (props) => {
   const geoJsonLink = "https://raw.githubusercontent.com/PublicaMundi/MappingAPI/master/data/geojson/us-states.json"
 
 
+
   return (
     <Map
       provider={stamenTerrain}
