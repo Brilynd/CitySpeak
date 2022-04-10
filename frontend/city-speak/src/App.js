@@ -8,19 +8,19 @@ function App() {
   const [center, setCenter] = useState([48.85837009999999, 2.2944813]);
   const [location, setLocation] = useState("");
 
-  // const getUserLocation = () => {
-  //   fetch("https://geolocation-db.com/json/0215bdd0-b516-11ec-b0a9-fdbfeccd28cf")
-  //   .then(res => res.json())
-  //   .then(data => {
-  //     console.log(data)
-  //     setCenter([data.latitude, data.longitude]);
-  //     setLocation(data.city);
-  //   })
-  // }
+  const getUserLocation = () => {
+    fetch("https://geolocation-db.com/json/0215bdd0-b516-11ec-b0a9-fdbfeccd28cf")
+    .then(res => res.json())
+    .then(data => {
+      console.log(data)
+      setCenter([data.latitude, data.longitude]);
+      setLocation(data.city);
+    })
+  }
 
-  // useEffect(() => {
-  //   getUserLocation();
-  // },[]);
+  useEffect(() => {
+    getUserLocation();
+  },[]);
   return (
     <div>
       <header>
