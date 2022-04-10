@@ -27,8 +27,7 @@ import PlacesAutocomplete, {
         >
           {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
             <div>
-              <p>Latitude: {coordinates.lat}</p>
-              <p>Longitude: {coordinates.lng}</p>
+         
   
               <input {...getInputProps({ placeholder: "Type address" })} />
   

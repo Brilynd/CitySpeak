@@ -36,10 +36,7 @@ function App() {
           </Grid>
           <Grid item xs={6} className="right-side">
             <div id="search-container">
-              {/* <SearchIcon fontSize='large'/> */}
-              {/* <SearchLocationInput/> */}
             <Address/>
-              
             </div>
           </Grid>
        
