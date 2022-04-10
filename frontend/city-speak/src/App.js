@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import Grid from '@mui/material/Grid';
 import Card from '@mui/material/Card';
 import { Typography } from '@mui/material';
-
+import Autocomplete from "react-google-autocomplete";
 import "./App.css"
 import MyMap from './Map';
-
+import Address from './SearchLocationInput';
 import SearchIcon from '@mui/icons-material/Search';
 
 
@@ -25,6 +25,9 @@ function App() {
   useEffect(() => {
     getUserLocation();
   },[]);
+
+
+  
   return (
     <div>
       <header>
@@ -34,8 +37,10 @@ function App() {
           </Grid>
           <Grid item xs={6} className="right-side">
             <div id="search-container">
-              <SearchIcon fontSize='large'/>
-              <input type="text" placeholder="Search" onChange={(e) => setLocation(e.target.value)} />
+              {/* <SearchIcon fontSize='large'/> */}
+              {/* <SearchLocationInput/> */}
+            <Address/>
+              
             </div>
           </Grid>
         </Grid>
