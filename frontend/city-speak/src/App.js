@@ -3,7 +3,7 @@ import Grid from '@mui/material/Grid';
 import Card from '@mui/material/Card';
 import { Typography } from '@mui/material';
 import "./App.css"
-
+import {PieChart,data} from './Chart';
 import MyMap from './Map';
 import TopTweet from './TopTweet';
 
@@ -44,12 +44,15 @@ function App() {
               setCenter(newCenter);
             }}/>
           </Grid>
-
           <Grid item xs={6}>
             <Card className="right-side">
               <Typography variant="h4">Current State: {location}</Typography>
               <TopTweet tweet={tweet}/>
+              <PieChart   width={100}
+  height={50}
+  options={{ maintainAspectRatio: false }}/>
             </Card>
+           
           </Grid>
 
           </Grid>
