@@ -8,8 +8,8 @@
 
 .card {
     background-color: #A7EFE9 !important;
-    padding: 10px;
     box-shadow: none !important;
+    height: 100%;
 }
 
 
@@ -29,8 +29,6 @@
     min-height: 100%;
     align-items: center;
     display: flex;
-    
-    
 }
 #search-container svg{
     width: 35px;

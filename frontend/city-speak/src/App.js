@@ -38,19 +38,20 @@ function App() {
             </div>
           </Grid>
        
-
+          <Grid item container spacing={3} style={{height: "90vh"}}>
           <Grid item xs={6}>
             <MyMap center={center}/>
           </Grid>
-          <Grid item xs={6} className="right-side">
-            <div className="card">
-              <h2>Current Location: {location}</h2>
+          <Grid item xs={6}>
+            <Card className="card">
+              <Typography variant="h4">Current Location: {location}</Typography>
               <ul>
                 <li>Item 1</li>
                 <li>Item 2</li>
                 <li>Item 3</li>
               </ul>
-            </div>
+            </Card>
+          </Grid>
           </Grid>
       </Grid>
       

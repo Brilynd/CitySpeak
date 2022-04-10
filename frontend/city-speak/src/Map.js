@@ -16,8 +16,6 @@ const MyMap = (props) => {
       defaultZoom={4}
       maxZoom={7}
     >
-      <Marker width={50} anchor={props.center} />
-
       <GeoJsonLoader
         link={geoJsonLink}
         styleCallback={(feature, hover) =>
@@ -26,6 +24,8 @@ const MyMap = (props) => {
             : { fill: '#d4e6ec99', strokeWidth: '1'}
         }
       />
+
+      <Marker width={50} anchor={props.center} />
     </Map>
   );
 };
