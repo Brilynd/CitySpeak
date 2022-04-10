@@ -56,7 +56,7 @@ function App() {
       <Grid container spacing={3} id="content">
         <Grid item xs={6}>
           <Typography variant="h3">
-            <b>State-Speak</b>
+            <b>State Speak</b>
           </Typography>
         </Grid>
 
@@ -74,12 +74,26 @@ function App() {
             <Card className="right-side">
               <Typography variant="h3">{location}</Typography>
               <Divider style={{ marginTop: "10px", marginBottom: "5px" }} />
-              <Typography variant="h4" fontSize="32px" textAlign='center' marginBottom="15px" letterSpacing=".5px">Top Tweet</Typography>
-              <TopTweet tweet={stateData} />
+              
+              {stateData.length == 0 ?
+                <>
+                  <Typography variant="h4" fontSize="50px" textAlign='center' marginTop="25%" letterSpacing=".5px">
+                    No data found for this state!
+                  </Typography>
+                </>
+              :
+              <>
+                <Typography variant="h4" fontSize="32px" textAlign='center' marginBottom="15px" letterSpacing=".5px">Top Tweet</Typography>
+                <TopTweet tweet={stateData} />
 
-              <div className="chart-container">
-                <PieChart data={stateData}/>
-              </div>
+                <Typography variant="h4" fontSize="32px" textAlign='center' marginBottom="15px" letterSpacing=".5px">State Tweet Categories</Typography>
+                <div className="chart-container">
+                  <PieChart data={stateData}/>
+                </div>
+              </>
+              }
+              
+
             </Card>
           </Grid>
         </Grid>
