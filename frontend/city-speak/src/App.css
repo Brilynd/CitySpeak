@@ -29,6 +29,10 @@
     padding: 10px;
 }
 
+.chart-container {
+    width: 50%;
+}
+
 header {
     margin-bottom: 15px;
 }

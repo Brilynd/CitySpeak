@@ -57,9 +57,10 @@ function App() {
               <Divider style={{ marginTop: "10px", marginBottom: "5px" }} />
               <Typography variant="h4">Top Tweet</Typography>
               <TopTweet tweet={tweet} />
-              <PieChart
-            
-              />
+
+              <div className="chart-container">
+                <PieChart/>
+              </div>
             </Card>
           </Grid>
         </Grid>
