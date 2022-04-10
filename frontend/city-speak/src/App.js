@@ -33,6 +33,7 @@ function App() {
       popular_category: data.popular_category[index],
       tweet: data.tweet[index],
       user: data.user[index],
+      analytics: data.Analytics[index],
     }
     tweets.push(tweet)
   }
@@ -49,8 +50,6 @@ function App() {
 
     setStateData(dataPoint)
   }, [location])
-
-  const tweet = {}
 
   return (
     <div>
@@ -79,7 +78,7 @@ function App() {
               <TopTweet tweet={stateData} />
 
               <div className="chart-container">
-                <PieChart/>
+                <PieChart data={stateData}/>
               </div>
             </Card>
           </Grid>

@@ -8,7 +8,7 @@ const data = {
     "5": "Minnesota",
     "6": "North Carolina",
     "7": "New Jersey",
-    "8": "New Yorl",
+    "8": "New York",
     "9": "Ohio",
     "10": "Oklahoma",
     "11": "Pennsylvania",
@@ -74,7 +74,27 @@ const data = {
     "14": "DoctorTweetz",
     "15": "cloudpsi",
     "16": "YahooCelebUK"
+  },
+  "Analytics": {
+    "0": { "economic": 0, "social": 1, "culture": 0, "health": 7 },
+    "1": { "economic": 1, "social": 1, "culture": 1, "health": 10 },
+    "2": { "economic": 0, "social": 0, "culture": 0, "health": 6 },
+    "3": { "economic": 1, "social": 0, "culture": 1, "health": 2 },
+    "4": { "economic": 0, "social": 0, "culture": 0, "health": 1 },
+    "5": { "economic": 0, "social": 0, "culture": 0, "health": 1 },
+    "6": { "economic": 0, "social": 0, "culture": 0, "health": 7 },
+    "7": { "economic": 0, "social": 0, "culture": 0, "health": 3 },
+    "8": { "economic": 0, "social": 1, "culture": 0, "health": 6 },
+    "9": { "economic": 0, "social": 0, "culture": 0, "health": 4 },
+    "10": { "economic": 0, "social": 1, "culture": 0, "health": 0 },
+    "11": { "economic": 0, "social": 0, "culture": 0, "health": 3 },
+    "12": { "economic": 0, "social": 0, "culture": 0, "health": 1 },
+    "13": { "economic": 0, "social": 0, "culture": 0, "health": 1 },
+    "14": { "economic": 1, "social": 0, "culture": 1, "health": 7 },
+    "15": { "economic": 0, "social": 1, "culture": 0, "health": 7 },
+    "16": { "economic": 0, "social": 1, "culture": 0, "health": 0 }
   }
 }
+
 
 export default data;
