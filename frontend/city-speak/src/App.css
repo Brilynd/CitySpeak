@@ -16,9 +16,15 @@
 
 #search-container input {
     border: none;
+    vertical-align: middle;
+    font-size: 30px;
+    
 }
 
 #search-container {
     border: 1px solid black;
     border-radius: 5px;
+    min-height: 100%;
+    
+    
 }

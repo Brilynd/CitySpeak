@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Grid from '@mui/material/Grid';
 import Card from '@mui/material/Card';
+import { Typography } from '@mui/material';
 
 import "./App.css"
 import MyMap from './Map';
 
-import { styled, alpha } from '@mui/material/styles';
 import SearchIcon from '@mui/icons-material/Search';
 
 
@@ -30,11 +30,11 @@ function App() {
       <header>
         <Grid container>
           <Grid item xs={6}>
-            <h1>City-Speak</h1>
+            <Typography variant="h3">City-Speak</Typography>
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={6} className="right-side">
             <div id="search-container">
-              <SearchIcon />
+              <SearchIcon fontSize='large'/>
               <input type="text" placeholder="Search" onChange={(e) => setLocation(e.target.value)} />
             </div>
           </Grid>
