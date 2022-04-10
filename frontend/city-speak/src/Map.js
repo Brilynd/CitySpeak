@@ -1,35 +1,31 @@
 import React, { useEffect, useState } from "react";
-import { Map, Marker } from "pigeon-maps";
-import { stamenToner } from 'pigeon-maps/providers'
+import { Map, Marker, GeoJsonLoader } from "pigeon-maps";
+import { stamenTerrain  } from 'pigeon-maps/providers'
 
 import Geocode from "react-geocode";
 
 const MyMap = (props) => {
 
-  // useEffect(() => {
-  //   Geocode.setApiKey("AIzaSyDgKlIduRn5Dvn6UBVwmoFpdQsFKNdpWQY");
-  //   Geocode.setLanguage("en");
+  const geoJsonLink = "https://raw.githubusercontent.com/PublicaMundi/MappingAPI/master/data/geojson/us-states.json"
 
-  //   // Get latitude & longitude from address.
-  //   Geocode.fromAddress("Eiffel Tower").then(
-  //     (response) => {
-  //       const { lat, lng } = response.results[0].geometry.location;
-  //       setCenter([lat, lng] );
-  //       console.log(lat, lng);
-  //     },
-  //     (error) => {
-  //       console.error(error);
-  //     }
-  //   );
-  // }, [])
 
   return (
     <Map
-      provider={stamenToner}
+      provider={stamenTerrain}
       center={props.center}
       defaultZoom={4}
+      maxZoom={7}
     >
       <Marker width={50} anchor={props.center} />
+
+      <GeoJsonLoader
+        link={geoJsonLink}
+        styleCallback={(feature, hover) =>
+          hover
+            ? { fill: '#93c0d099', strokeWidth: '2'}
+            : { fill: '#d4e6ec99', strokeWidth: '1'}
+        }
+      />
     </Map>
   );
 };
