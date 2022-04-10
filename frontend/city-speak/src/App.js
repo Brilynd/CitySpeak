@@ -40,11 +40,14 @@ function App() {
        
           <Grid item container spacing={3} style={{height: "90vh"}}>
           <Grid item xs={6}>
-            <MyMap center={center}/>
+            <MyMap center={center} onLocationChange={(newLocation, newCenter) => {
+              setLocation(newLocation);
+              setCenter(newCenter);
+            }}/>
           </Grid>
           <Grid item xs={6}>
             <Card className="card">
-              <Typography variant="h4">Current Location: {location}</Typography>
+              <Typography variant="h4">Current State: {location}</Typography>
               <ul>
                 <li>Item 1</li>
                 <li>Item 2</li>
