@@ -7,11 +7,12 @@ import "./App.css"
 import MyMap from './Map';
 import Address from './SearchLocationInput';
 import SearchIcon from '@mui/icons-material/Search';
-
+import parseAddress from "parse-address"
 
 function App() {
   const [center, setCenter] = useState([48.85837009999999, 2.2944813]);
   const [location, setLocation] = useState("");
+  const [returnLocation,setReturnLocation] = useState(" ")
 
   const getUserLocation = () => {
     fetch("https://geolocation-db.com/json/0215bdd0-b516-11ec-b0a9-fdbfeccd28cf")
@@ -26,6 +27,15 @@ function App() {
     getUserLocation();
   },[]);
 
+  useEffect(()=>{
+    spliceLocation(returnLocation)
+  },[returnLocation])
+
+  const spliceLocation=(location)=>{
+ 
+    
+  }
+
 
   
   return (
@@ -36,7 +46,32 @@ function App() {
           </Grid>
           <Grid item xs={6} className="right-side">
             <div id="search-container">
-            <Address/>
+            {/* <Address returnLocation={(returnLocation)=>setReturnLocation(returnLocation)}/> */}
+            <select name="" id="">
+              <option value="">AL</option>
+              <option value="">AK</option>
+              <option value="">AZ	</option>
+              <option value="">AR</option>
+              <option value="">CA</option>
+              <option value="">CO</option>
+              <option value="">CT</option>
+              <option value="">DE</option>
+              <option value="">DC</option>
+              <option value="">FL</option>
+              <option value="">GA</option>
+              <option value="">HI</option>
+              <option value="">ID</option>
+              <option value="">IL</option>
+              <option value="">IN</option>
+              <option value="">IA</option>
+              <option value="">KS</option>
+              <option value="">KY</option>
+              <option value="">LA</option>
+              <option value="">ME</option>
+              <option value="">MD</option>
+              <option value="">MA	</option>
+              <option value=""></option>
+            </select>
             </div>
           </Grid>
        

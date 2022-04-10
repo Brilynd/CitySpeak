@@ -5,7 +5,7 @@ import PlacesAutocomplete, {
 
   import React from "react";
   
-  export default function Address() {
+  export default function Address(props) {
     const [address, setAddress] = React.useState("");
     const [coordinates, setCoordinates] = React.useState({
       lat: null,
@@ -16,14 +16,17 @@ import PlacesAutocomplete, {
       const latLng = await getLatLng(results[0]);
       setAddress(value);
       setCoordinates(latLng);
+      props.returnLocation(value)
+      console.log(value)
     };
   
     return (
-      <div>
+      <div style={{position:"absolute"}}>
         <PlacesAutocomplete
           value={address}
           onChange={setAddress}
           onSelect={handleSelect}
+          
         >
           {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
             <div>
